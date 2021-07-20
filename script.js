@@ -1,45 +1,35 @@
 function add(a, b) {
     return a + b;
-  }
-  
-  function multiply(a, b) {
-    return a * b
-  }
-  
-  function power(a, b) {
-    return a ** b;
-  }
-  
-  function factorial(valor) {
-  
-    if (valor < 0) {
-  
-  
-      return 'Valor deve ser maior ou igual a zero';
-  
-    } else if ((valor == 0) || (valor == 1)) {
-      return 1;
-    } else {
-  
-      let adiciona = 1;
-  
-      for (let x = valor; x > 1; x--) {
-        adiciona = adiciona * x;
-      }
-  
-      return adiciona;
-  
+}console.assert(add(3, 5) === 8, 'A função add não está funcionando como esperado');
+
+
+function multiply(a, b) {
+    let mult = 0;
+    for (let i = 1; i <= a; i++) {
+        mult = add(b, mult);
     }
-  
-  } 
-  function fibonnaci (n){
+    return mult;
+}console.assert(multiply(4, 6) === 24, 'A função multiply não está funcionando como esperado');
+
+function power(a, b) {
+   let potencia=1;
+    for (let i = 1; i <= b; i++) {
+       potencia= multiply(a,potencia);
+    }
+    return potencia;
+}console.assert(power(3, 4) === 81, 'A função power não está funcionando como esperado');
+
+function factorial(valor) {    
+let fat=1;
+        for (let i = 1; i<=valor; i++ ) {
+           fat = multiply(i,fat) 
+        }
+       return fat ;
+}console.assert(factorial(5) === 120, 'A função factorial não está funcionando como esperado');
+
+function fibonnaci(n) {
     if (n === 0) return 0;
-   if ( n === 1 ) return 1;
-   if( n === 2 ) return 2;
-    
-   return fibonnaci( n -1 ) + fibonnaci( n - 2 );
-   
-     }
-  
-  
-  console.log(fibonnaci(8));
+    if (n === 1) return 1;
+    if (n === 2) return 2;
+    return fibonnaci(n - 1) + fibonnaci(n - 2);
+}
